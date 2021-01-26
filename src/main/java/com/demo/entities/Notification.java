@@ -1,6 +1,7 @@
 package com.demo.entities;
 
 
+import com.demo.utils.ArrayConverter;
 import lombok.Data;
 import javax.persistence.*;
 import java.util.ArrayList;

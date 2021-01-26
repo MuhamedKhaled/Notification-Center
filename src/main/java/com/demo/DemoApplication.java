@@ -15,17 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
-@RestController
 public class DemoApplication {
-
-    @Autowired
-    UserRepository userRepository;
-    @Autowired
-    NotificationRepository notificationRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-
-
 }
