@@ -1,5 +1,6 @@
-#CREATE DATABASE `notification`;
+#CREATE DATABASE IF NOT EXISTS `notification`;
 
+USE `notification`;
 CREATE TABLE `notification` (
                                 `id` int NOT NULL AUTO_INCREMENT,
                                 `title` varchar(45) DEFAULT NULL,

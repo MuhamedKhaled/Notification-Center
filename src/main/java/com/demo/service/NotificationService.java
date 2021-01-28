@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface NotificationService {
 
-    Integer sendNotification(NotificationRequest notificationRequest);
+    Notification sendNotification(NotificationRequest notificationRequest);
     List<Notification>getNotification();
 }

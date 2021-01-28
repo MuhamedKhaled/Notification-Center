@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface NotificationDao {
 
-    Integer saveNotificationToDatabase(NotificationRequest notificationRequest);
+    Notification saveNotificationToDatabase(NotificationRequest notificationRequest);
     List<Notification> getNotifications();
 
 }

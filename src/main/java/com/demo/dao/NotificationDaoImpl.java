@@ -17,7 +17,7 @@ public class NotificationDaoImpl implements NotificationDao{
     NotificationRepository notificationRepository;
 
     @Override
-    public Integer saveNotificationToDatabase(NotificationRequest notificationRequest) {
+    public Notification saveNotificationToDatabase(NotificationRequest notificationRequest) {
         Notification notification = new Notification();
 
         notification.setTitle(notificationRequest.getTitle());
@@ -30,7 +30,7 @@ public class NotificationDaoImpl implements NotificationDao{
 
         notification = notificationRepository.save(notification);
 
-        return notification.getId();
+        return notification;
     }
 
     @Override

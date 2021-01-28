@@ -31,11 +31,7 @@ public class NotificationController {
 
     @RequestMapping(value = "/send", method = RequestMethod.POST)
     public ResponseEntity<String> NotificationsSend(@RequestBody NotificationRequest notificationRequest){
-
         notificationService.sendNotification(notificationRequest);
-
-
-
         return ResponseEntity.ok("Notification has been added successfully");
     }
 
