@@ -35,7 +35,7 @@ services:
         context: .                          #docker file path (. means root directory)
         dockerfile: Dockerfile              #docker file name
       ports:
-          - "8084:8084"                     #docker containter port with your os port
+          - "8084:8084"                     #docker container port with your os port
       restart: always
 
       depends_on:                           #define dependencies of this app
@@ -48,6 +48,30 @@ services:
         - SPRING_DATASOURCE_USERNAME=root
         - SPRING_DATASOURCE_PASSWORD=root
         - SPRING_DATASOURCE_RABBITMQ_HOST=rabbitmq
+
+    #service 4: definition of your spring-boot app
+  notification-cmd:                         #it is just a name, which will be used only in this file.
+      image: notification-cmd               #name of the image after dockerfile executes
+      container_name: notification-cmd  #name of the container created from docker image
+      build:
+        context: ../notificationcmd                          #docker file path (. means root directory)
+        dockerfile: Dockerfile              #docker file name
+      ports:
+        - "8085:8085"                     #docker container port with your os port
+      restart: always
+
+      depends_on:                           #define dependencies of this app
+        - myDb                              #dependency name (which is defined with this name 'db' in this file earlier)
+        - rabbitmq
+      networks:
+        - local
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db2:3306/notification?allowPublicKeyRetrieval=true&useSSL=false
+        - SPRING_DATASOURCE_USERNAME=root
+        - SPRING_DATASOURCE_PASSWORD=root
+        - SPRING_DATASOURCE_RABBITMQ_HOST=rabbitmq
+
+
 
 networks:
   local:
