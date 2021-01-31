@@ -10,9 +10,13 @@ notification-center that handle send notifications (SMS,FCM,Email)
 
 
 ## Installation
-  for the services to run together,
-
-please clone the repo then run `docker-compose up`
+1 - clone the repo
+2 - Make sure you have `Maven` installed. Execute the following maven command from the directory of the project (notification,notificaitonCMD)
+that will build jar files that docker file will use them for building image of it
+```
+mvn clean install
+```
+3 - then run `docker-compose up`
 ## Usage
 after the docker compose starts make sure you see on the console
 then you can send to `localhost:8084`
