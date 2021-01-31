@@ -1,6 +1,5 @@
 package com.demo;
 
-import com.demo.request.SampleCreateUserRequest;
 import com.demo.request.UserRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
