@@ -32,7 +32,7 @@ services:
       image: notification               #name of the image after dockerfile executes
       container_name: notification-app  #name of the container created from docker image
       build:
-        context: .                          #docker file path (. means root directory)
+        context: ./notification             #docker file path (. means root directory)
         dockerfile: Dockerfile              #docker file name
       ports:
           - "8084:8084"                     #docker container port with your os port
@@ -54,7 +54,7 @@ services:
       image: notification-cmd               #name of the image after dockerfile executes
       container_name: notification-cmd  #name of the container created from docker image
       build:
-        context: ../notificationcmd                          #docker file path (. means root directory)
+        context: ./notificationcmd          #docker file path (. means root directory)
         dockerfile: Dockerfile              #docker file name
       ports:
         - "8085:8085"                     #docker container port with your os port
