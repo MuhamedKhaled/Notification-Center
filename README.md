@@ -1,10 +1,12 @@
 # notification-center
 notification-center that handle send notifications (SMS,FCM,Email)
 ## contents
-- [installation](#installation)
-- [usage](#usage)
+- [Installation](#installation)
+- [Usage](#usage)
 - [APIs](#apis)
-- [scenario](#scenario)
+- [Scenario](#scenario)
+- [Exciplnation](#exciplnation)
+
 
 
 ## Installation
@@ -77,3 +79,21 @@ Notification has been added successfully
 | consumers 	| Array  	| Empty              	| if the kind is "IN" then this is array of user ids that we need to send the notification to, if the kind is "TP" then this is array of group names or topics that we need to send the notification to all users into these groups |
 
 you can see it in the console it will log everything
+
+## Explanation
+![notifications-center](https://github.com/MuhamedKhaled/notification-center/blob/master/projects-arch.png "project flowchart")
+
+1 - when we send a request to notification service which responsable for saving the data into mysql database (users, notifications) then notify any third party services like (notificationCMD)
+
+2 - when the notification send a notifier it uses RabbitMQ to notify notificationcmd that there is a new notification that needs to be sent along with the notification id
+
+3 - Notificationcmd receive the notification and start proccessing
+    - select the notification from DB
+    - based on type create a new MessageTypeClass and pass the notification
+    - then into the MessageTypeClass we set the message
+    - load all message providers
+    - publish to them the message
+    - every Provider split the consumer array into chunks based on (max-per-time) config whitch in out case Assumed max is 100 per 1 min
+    - send the notification
+
+
