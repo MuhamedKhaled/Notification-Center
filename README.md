@@ -5,7 +5,7 @@ notification-center that handle send notifications (SMS,FCM,Email)
 - [Usage](#usage)
 - [APIs](#apis)
 - [Scenario](#scenario)
-- [Exciplnation](#exciplnation)
+- [explanation](#explanation)
 
 
 
