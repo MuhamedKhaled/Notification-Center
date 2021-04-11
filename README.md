@@ -10,7 +10,7 @@ notification-center that handle send notifications (SMS,FCM,Email)
 
 
 ## Installation
-1 - clone the repo
+1 - clone the repo <br />
 2 - Make sure you have `Maven` installed. Execute the following maven command from the directory of the project (notification,notificaitonCMD)
 that will build jar files that docker file will use them for building image of it
 ```
