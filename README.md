@@ -1,5 +1,5 @@
 # notification-center
-notification-center that handle send notifications (SMS,FCM,Email)
+Notification-center that handle send notifications (SMS,FCM,Email)
 ## contents
 - [Installation](#installation)
 - [Usage](#usage)
